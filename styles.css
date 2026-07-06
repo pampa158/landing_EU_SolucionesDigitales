@@ -102,16 +102,15 @@ ul {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  font-size: 1.25rem;
-  font-weight: 700;
+.logo img{
+  display: flex;
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -188,13 +187,13 @@ ul {
 
 .hero-visual {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.5 / 1;
   max-height: 500px;
   position: relative;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.4));
   border-radius: 1rem;
   padding: 1px;
-  box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 px 50px -12px rgba(59, 130, 246, 0.1);
 }
 
 .hero-box {
