@@ -46,6 +46,10 @@ ul {
   list-style: none;
 }
 
+a, button {
+   -webkit-tap-highlight-color: transparent;
+}
+
 /* Ambient Glows */
 .ambient-glow {
   position: fixed;
@@ -543,6 +547,10 @@ ul {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+}
+
+.contact-card a {
+  color: var(--text-muted)
 }
 
 .contact-icon {
