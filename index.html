@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Job - Soluciones Digitales</title>
+  <title>EU! Soluciones Digitales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,21 +15,35 @@
   <div class="ambient-glow glow-purple"></div>
 
   <!-- Navbar -->
-  <nav class="navbar">
+<nav class="navbar">
+
     <div class="logo">
-      <img src="source\LOGO-WEBP.webp" alt="Logo de navbar" width="66" height="40">
+        <a href="#seccion-inicio">
+        <img src="source/LOGO-WEBP.webp" alt="Logo de navbar"  width="66" height="40">
+        </a>
     </div>
+
     <div class="nav-links">
-      <a href="#">Inicio</a>
-      <a href="#">Servicios y Software</a>
-      <a href="#">¿Porqué elegirnos?</a>
-      <a href="#">Contacto</a>
+        <a href="#seccion-inicio">Inicio</a>
+        <a href="#seccion-servicios">Servicios y Software</a>
+        <a href="#seccion-razones">¿Por qué elegirnos?</a>
+        <a href="#seccion-contacto">Contacto</a>
     </div>
-    <button class="btn-primary">Solicitar Presupuesto</button>
-  </nav>
+
+    <button class="btn-primary" id="btnpresupuesto-nav" onclick="wspPresupuesto()">
+        Solicitar Presupuesto
+    </button>
+
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</nav>
 
   <!-- Hero Section -->
-  <header class="hero section-container">
+  <header class="hero section-container" id="seccion-inicio">
     <div class="hero-content">
       <h1 class="hero-title">
         Transformamos ideas <br />
@@ -39,8 +53,8 @@
         Desarrollamos software personalizado, aplicaciones web que impulsan el crecimiento de tu negocio y mejoran la experiencia de tus usuarios.
       </p>
       <div class="hero-buttons">
-        <button class="btn-primary">Solicitar Presupuesto</button>
-        <button class="btn-outline">¿Porqué elegirnos?</button>
+        <button class="btn-primary" onclick="wspPresupuesto()">Solicitar Presupuesto</button>
+        <a href="#seccion-razones"><button class="btn-outline">¿Porqué elegirnos?</button></a>
       </div>
     </div>
     <div class="hero-visual">
@@ -49,7 +63,7 @@
   </header>
 
   <!-- Services Section -->
-  <section class="services section-container">
+  <section class="services section-container" id="seccion-servicios">
     <div class="section-header">
       <h2>Servicios y software a tu medida</h2>
       <p>Desarrollamos las herramientas digitales que impulsan tu negocio hacia el próximo nivel.</p>
@@ -72,7 +86,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Alertas de stock y reportes</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Múltiples usuarios y permisos</li>
         </ul>
-        <button class="btn-card">Contáctanos</button>
+        <button class="btn-card" id="btn-wsp-sistema" onclick="wspServicios()">Contáctanos</button>
       </div>
 
       <!-- Card 2 -->
@@ -91,7 +105,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Integración con redes y formularios</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Enfocadas en captar clientes</li>
         </ul>
-        <button class="btn-card">Contáctanos</button>
+        <button class="btn-card" id="btn-wsp-landing" onclick="wspServicios()">Contáctanos</button>
       </div>
 
       <!-- Card 3 -->
@@ -110,13 +124,13 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Acceso desde cualquier dispositivo</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Soporte y mantenimiento continuo</li>
         </ul>
-        <button class="btn-card">Contáctanos</button>
+        <button class="btn-card" id="btn-wsp-appsweb" onclick="wspServicios()">Contáctanos</button>
       </div>
     </div>
   </section>
 
   <!-- Reasons Section -->
-  <section class="reasons section-container">
+  <section class="reasons section-container" id="seccion-razones">
     <div class="section-header">
       <div class="badge"><span class="dot"></span> ¿PORQUE ELEGIRNOS?</div>
       <h2>Razones para trabajar con nosotros</h2>
@@ -182,7 +196,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact section-container">
+  <section class="contact section-container" id="seccion-contacto">
     <div class="section-header">
       <h2>¿Donde nos encontrás?</h2>
       <p>Estamos listos para ayudarte a llevar tu proyecto al siguiente nivel. Conectemos y transformemos tus ideas en soluciones digitales.</p>
@@ -193,28 +207,28 @@
         <h3>Redes sociales</h3>
         <p>Seguinos y enterate de nuestras novedades</p>
         <div class="social-links">
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#"><img src="source\instagram_40px.svg" alt="Instagram" width="20" height="20"></a>
+          <a href="#"><img src="source\whatsapp_40px.svg" alt="whatsapp" width="20" height="20"></a>
         </div>
 
         <div class="contact-cards">
           <div class="contact-card">
             <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <img src="source\call_25px.svg" alt="Teléfono" width="20" height="20">
             </div>
             <div>
               <strong>Teléfono</strong>
               <span>+54 9 3562412543</span>
+              <span>+54 9 3562503465</span>
             </div>
           </div>
           <div class="contact-card">
             <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <img src="source\mail_25px_20px.svg" alt="Email" width="30" height="25">
             </div>
             <div>
               <strong>Email</strong>
-              <span>laempresaloca@gmail.com</span>
+              <span>eusolucionesdigitales@gmail.com</span>
             </div>
           </div>
         </div>
@@ -231,23 +245,52 @@
           <input type="tel" placeholder="Teléfono">
           <input type="text" placeholder="Asunto">
           <textarea placeholder="Mensaje" rows="4"></textarea>
-          <button type="button" class="btn-primary">ENVIAR MENSAJE</button>
+          <button type="button" class="btn-form">ENVIAR MENSAJE</button>
         </form>
       </div>
     </div>
   </section>
+
+  <div class="wsp-floating-btn" id="wspFloatingBtn" onclick="toggleWidget()">
+        <img src="source\icono_wsp_blanco.svg" alt="WhatsApp" width="30" height="30">
+        <div class="wsp-notification-badge" id="wspBadge">1</div>
+    </div>
+
+    <div class="wsp-widget-container" id="wspWidget">
+        <div class="wsp-widget-header">
+            <div class="wsp-header-info">
+                <img src="source\LOGO_FONDO_NEGRO.png" alt="Logo EU" class="wsp-profile-img">
+                <div class="wsp-status-text">
+                    <h4>EU! Soluciones Digitales</h4>
+                    <span><span class="wsp-status-dot"></span> En línea</span>
+                </div>
+            </div>
+            <button class="wsp-close-btn" onclick="toggleWidget()"><img src="source\btn_cerrar_24px.svg" alt="Cerrar" width="20" height="20"></button>
+        </div>
+
+        <div class="wsp-widget-body">
+            <div class="wsp-chat-bubble">
+                <div class="wsp-bubble-meta" id="wspSenderMeta">EU! • Ahora</div>
+                <div id="wspContentArea"></div>
+            </div>
+
+            <a href="#" target="_blank" class="wsp-cta-btn" id="wspCtaBtn">
+                <img src="source\icono_wsp_blanco.svg" alt="WhatsApp" width="20" height="20"> Hablar por WhatsApp
+            </a>
+        </div>
+    </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="logo">
-        <span class="text-blue">My</span><span class="text-purple">Job</span>
+        <img src="source\LOGO-WEBP.webp" alt="Logo en footer" width="66" height="40">
       </div>
       <p>Desarrollamos soluciones digitales a medida para impulsar tu negocio y potenciar tu presencia online.</p>
     </div>
     <div class="footer-grid">
-      <div class="footer-links">
+      <div class="footer-navegacion" id="navegacion">
         <h4>Navegación</h4>
         <ul>
           <li><a href="#">Inicio</a></li>
@@ -256,7 +299,7 @@
           <li><a href="#">Contacto</a></li>
         </ul>
       </div>
-      <div class="footer-links">
+      <div class="footer-legal" id="legal">
         <h4>Legal</h4>
         <ul>
           <li><a href="#">Términos y condiciones</a></li>
@@ -267,11 +310,14 @@
   </div>
     
     <div class="footer-bottom">
-      <p>© 2026 My Job. Todos los derechos reservados.</p>
+      <p>© 2026 EU! Soluciones Digitales. Todos los derechos reservados.</p>
       <p class="made-with">
-        Hecho con <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> por My Job
+        Hecho con <img src="source\corazon_24px.svg" alt="Corazón" width="16" height="16">  por EU! Soluciones Digitales
       </p>
     </div>
   </footer>
+  <script src="js/widgetwsp.js"></script>
+ <script src="js/nav-hamburguesa.js"></script>
+ <script src="js/wsp-servicios.js"></script>
 </body>
 </html>
