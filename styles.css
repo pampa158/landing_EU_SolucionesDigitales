@@ -384,6 +384,26 @@ a, button, .wsp-floating-btn{
   transition: background 0.3s;
 }
 
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.card-image img {
+  position: absolute;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnSistema {
+  z-index: -10;
+}
+
 .card:hover .btn-card {
   background: var(--primary-gradient);
   border-color: transparent;
@@ -1004,6 +1024,10 @@ a, button, .wsp-floating-btn{
     margin-top: 4rem;
   }
 
+  .card-image img {
+    max-width: 70%;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1125,7 +1149,10 @@ a, button, .wsp-floating-btn{
     align-items: center;
     text-align: center;
   }
-  
+
+  .card-image img {
+    max-width: 60%;
+  }
 
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1184,6 +1211,10 @@ a, button, .wsp-floating-btn{
 
 
 @media (max-width:480px) {
+
+    .card-image img {
+    max-width: 80%;
+  }
 
   .footer-navegacion li {
     line-height: 1.2rem;
