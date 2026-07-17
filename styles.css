@@ -686,8 +686,8 @@ a, button, .wsp-floating-btn{
             right: -2px;
             background-color: #ef4444;
             color: white;
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 10px;
+            font-weight: 600;
             border-radius: 50%;
             width: 20px;
             height: 20px;
