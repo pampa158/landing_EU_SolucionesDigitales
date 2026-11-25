@@ -1,10 +1,10 @@
 /* ==========================================================================
-   EU!-Commerce - Portal de Descargas Oficial
-   Estilos CSS Puro (Vanilla CSS)
+    EU!-Commerce - Portal de Descargas Oficial
+    Estilos CSS Puro (Vanilla CSS)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. VARIABLES DE TEMA & CONFIGURACIÓN
+    1. VARIABLES DE TEMA & CONFIGURACIÓN
    -------------------------------------------------------------------------- */
 :root {
     /* Fuentes */
@@ -50,12 +50,39 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. RESET & ESTILOS BASE
+    2. RESET & ESTILOS BASE
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+
+html::-webkit-scrollbar {
+    width: 10px; 
+}
+
+html::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #8b5cf6; 
+    border-radius: 5px;  
+    border: 2px solid #1a1a1a; 
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6; 
+}
+
+
+@supports not selector(::-webkit-scrollbar) {
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #1a1a1a;
+}
 }
 
 html {
@@ -103,7 +130,7 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   3. FONDOS ARQUITECTÓNICOS Y DESTELLOS AMBIENTALES
+    3. FONDOS ARQUITECTÓNICOS Y DESTELLOS AMBIENTALES
    -------------------------------------------------------------------------- */
 .bg-tech-grid {
     background-color: var(--bg-dark);
