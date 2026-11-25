@@ -12,7 +12,7 @@
  */
 const CONFIG = {
     // Carpeta relativa donde se alojan los instaladores (funciona tanto en local como en tu VPS)
-    VERSIONS_DIR: './updates/versions/',
+    VERSIONS_DIR: '/updates/versions/',
 
     // Estado dinámico: se puebla ÚNICAMENTE con los datos leídos del servidor
     CURRENT_VERSION: null,

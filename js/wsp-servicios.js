@@ -4,7 +4,7 @@ const telefonos = [
 ];
 
 const servicios = {
-    btnSistema: "¡Hola! 👋 Me interesa conocer más sobre el Sistema de Gestión y Punto de Venta. ¿Podrían brindarme información?",
+    btnSistema: "¡Hola! 👋 Me interesa conocer más sobre EU-Commerce. ¿Podrían brindarme información?",
     btnLanding: "¡Hola! 👋 Me interesa desarrollar una Landing Page para mi negocio. ¿Podrían brindarme información?",
     btnWeb: "¡Hola! 👋 Me interesa desarrollar una Aplicación Web. ¿Podrían brindarme información?",
 };

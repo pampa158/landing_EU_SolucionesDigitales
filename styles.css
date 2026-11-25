@@ -1,3 +1,30 @@
+
+html::-webkit-scrollbar {
+  width: 10px; 
+}
+
+html::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #8b5cf6; 
+  border-radius: 5px;  
+  border: 2px solid #1a1a1a; 
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; 
+}
+
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #1a1a1a;
+  }
+}
+
 :root {
   --bg-dark: #0B0C10;
   --bg-card: #151822;
@@ -23,7 +50,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -45,6 +72,10 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+}
+button:hover{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
 }
 
 ul {
@@ -306,12 +337,13 @@ a, button, .wsp-floating-btn{
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.3s;
+  transition: transform 0.3s, border-color 0.3s;
 }
 
 
 .card:hover {
   border-color: var(--border-hover);
+  transform: scale(1.05);
 }
 
 .card-title {
@@ -405,9 +437,6 @@ a, button, .wsp-floating-btn{
   align-items: center;
 }
 
-#btnSistema {
-  z-index: -10;
-}
 
 .card:hover .btn-card {
   background: var(--primary-gradient);
