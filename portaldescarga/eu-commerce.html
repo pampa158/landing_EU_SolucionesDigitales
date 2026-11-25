@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU!-Commerce - Portal Oficial de Descarga</title>
+    <meta name="description" content="Portal exclusivo de descarga oficial para EU!-Commerce de EU Soluciones Digitales.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="assets/FAVICON.webp" type="image/webp">
+
+    <!-- Google Fonts: Inter, Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Hojas de Estilos CSS Puro -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-tech-grid">
+
+    <!-- Destellos ambientales de fondo (Cian Eléctrico y Púrpura Profundo) -->
+    <div class="ambient-lights" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-glow-3"></div>
+    </div>
+
+    <!-- 1. HEADER / NAVEGACIÓN -->
+    <header class="header-container">
+        <div class="header-content">
+            
+            <!-- Marca EU Soluciones Digitales -->
+            <a href="https://eusolucionesdigitales.digital" class="brand-link" target="_blank" rel="noopener noreferrer">
+                <div class="brand-logo-wrapper">
+                    <img src="assets/LOGO PNG.png" alt="Logo EU Soluciones Digitales">
+                </div>    
+                <div class="brand-text-col">
+                    <span class="brand-title">EU Soluciones Digitales</span>
+
+                </div>
+            </a>
+
+            <!-- Badge de Estado: Acceso Directo • Descarga Oficial -->
+            <div class="status-badge">
+                <span class="ping-indicator">
+                    <span class="ping-circle"></span>
+                    <span class="ping-dot"></span>
+                </span>
+                <span class="status-badge-text">
+                    Acceso Directo <span class="status-badge-dot">•</span> <span class="status-badge-highlight">Descarga Oficial</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-container">
+
+        <!-- 2. HERO / TARJETA PRINCIPAL PROTAGONISTA -->
+        <section class="glass-card">
+            <!-- Línea de brillo superior decorativa -->
+            <div class="glass-card-top-shine"></div>
+
+            <div class="hero-content">
+
+
+                <!-- Título Principal -->
+                <h1 class="hero-title">
+                    <span class="text-gradient-brand">¡Gracias por elegir EU!-Commerce!</span>
+                </h1>
+
+                <!-- Subtítulo / Mensaje de bienvenida limpio -->
+                <p class="hero-description">
+                    Bienvenido a tu espacio exclusivo de entrega. Ya podés descargar el instalador oficial de <strong>EU!-Commerce</strong> para comenzar a gestionar tu negocio de forma ágil, moderna y segura.
+                </p>
+
+                <!-- Zona de Acción: Botón de Descarga Principal -->
+                <div class="action-zone">
+                    <button id="downloadBtn" onclick="iniciarDescarga()" class="btn-glow-primary" type="button">
+                        <i id="btnIcon" data-lucide="download" class="btnIcono"></i>
+                        <span id="btnText">Descargar EU!-Commerce</span>
+                    </button>
+
+                    <!-- Indicador de seguridad discreto bajo el botón -->
+                    <div class="security-indicators">
+                        <span class="security-badge">
+                            <i data-lucide="shield-check"></i>
+                            <span id="securityStatusText">Instalador oficial verificado</span>
+                        </span>
+                        <span class="security-separator">•</span>
+                        <button type="button" onclick="toggleSmartScreenHelp()" class="smartscreen-toggle-btn">
+                            ¿Windows pide confirmación?
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Aviso sutil desplegable sobre Windows SmartScreen -->
+                <div id="smartScreenDropdown" class="smartscreen-box hidden">
+                    <div class="smartscreen-card">
+                        <div class="smartscreen-header">
+                            <div class="smartscreen-title">
+                                <i data-lucide="info"></i>
+                                <span>Aviso de Windows SmartScreen</span>
+                            </div>
+                            <button type="button" onclick="toggleSmartScreenHelp()" class="smartscreen-close-btn" aria-label="Cerrar aviso">
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+                        <p>
+                            Al ejecutar el instalador por primera vez, Windows puede mostrar la ventana <em>"Windows protegió su PC"</em>. Solo hacé clic en <strong class="smartscreen-highlight">Más información</strong> y luego en <strong class="smartscreen-strong">Ejecutar de todas formas</strong> para instalar con total seguridad.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PANEL INTERACTIVO DE PROGRESO Y CONFIRMACIÓN -->
+                <div id="downloadFeedback" class="download-feedback-box hidden">
+                    <div class="download-feedback-card">
+                        
+                        <!-- Estado de progreso -->
+                        <div class="download-status-row">
+                            <div class="status-left">
+                                <div id="statusSpinner" class="status-spinner"></div>
+                                <i id="statusCheck" data-lucide="check-circle-2" class="status-check-icon hidden"></i>
+                                <span id="statusTitle" class="status-title-text">
+                                    Preparando descarga oficial...
+                                </span>
+                            </div>
+                            <span id="progressPercent" class="progress-percent-text">0%</span>
+                        </div>
+
+                        <!-- Barra de progreso -->
+                        <div class="progress-bar-track">
+                            <div id="progressBar" class="progress-bar-fill"></div>
+                        </div>
+
+                        <!-- Mensaje de confirmación al finalizar -->
+                        <div id="downloadCompleteMsg" class="download-complete-msg hidden">
+                            <div class="complete-alert">
+                                <i data-lucide="check"></i>
+                                <p>
+                                    <strong>¡Descarga iniciada!</strong> Revisá la carpeta de <em>Descargas</em> de tu computadora para abrir el instalador<span id="completeFileName"></span>.
+                                </p>
+                            </div>
+
+                            <div class="complete-actions">
+                                <button type="button" onclick="toggleSmartScreenHelp()" class="help-link-amber">
+                                    ¿Cómo pasar el aviso de Windows?
+                                </button>
+                                <button type="button" onclick="iniciarDescarga(true)" class="retry-link-cyan">
+                                    Reintentar descarga
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN INFERIOR: GUÍAS Y RECURSOS -->
+        <section class="resources-section" aria-label="Guías y recursos de uso">
+            <div class="resources-header">
+                <h2 class="resources-title">
+                    <span class="resources-indicator"></span>
+                    Guías y recursos para empezar
+                </h2>
+                <span class="resources-tag">Material de apoyo</span>
+            </div>
+
+            <div class="resources-grid">
+                
+                <!-- Tarjeta 1: Video Tutorial / Primeros Pasos -->
+                <a href="#" id="videoTutorialLink" onclick="abrirRecurso(event, 'video')" class="glass-subcard subcard-cyan">
+                    <div class="subcard-blur-circle blur-cyan"></div>
+                    
+                    <div class="subcard-top">
+                        <div class="subcard-icon-box icon-box-cyan">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                        <div class="subcard-info">
+                            <h3>Video Tutorial • Primeros Pasos</h3>
+                            <p>Aprendé paso a paso cómo instalar, activar tu licencia y dejar listo tu sistema en pocos minutos.</p>
+                        </div>
+                    </div>
+
+                    <div class="subcard-bottom bottom-cyan">
+                        <span>Ver video explicativo</span>
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- Tarjeta 2: Manual de Uso -->
+                <a href="#" id="manualUsoLink" onclick="abrirRecurso(event, 'manual')" class="glass-subcard subcard-purple">
+                    <div class="subcard-blur-circle blur-purple"></div>
+                    
+                    <div class="subcard-top">
+                        <div class="subcard-icon-box icon-box-purple">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="subcard-info">
+                            <h3>Manual de Uso Completo</h3>
+                            <p>Consultá la guía detallada con todas las herramientas de ventas, control de stock, caja y reportes.</p>
+                        </div>
+                    </div>
+
+                    <div class="subcard-bottom bottom-purple">
+                        <span>Abrir manual de usuario</span>
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NOTIFICACIÓN TOAST FLOTANTE -->
+    <div id="toastNotification" class="toast-notification" role="status" aria-live="polite">
+        <div class="toast-content">
+            <span class="toast-dot"></span>
+            <span id="toastMessage">Próximamente disponible</span>
+        </div>
+    </div>
+
+    <!-- 4. FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-copy">
+                <span>&copy; <span id="currentYear"></span> <strong>EU Soluciones Digitales</strong>. Todos los derechos reservados.</span>
+            </div>
+
+            <div class="footer-actions">
+                <button type="button" onclick="abrirSoporteWhatsApp(event)" class="support-whatsapp-btn">
+                    <i data-lucide="message-circle"></i>
+                    <span>Soporte Directo</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica Interactiva en JS Puro -->
+    <script src="js/main.js"></script>
+</body>
+</html>
